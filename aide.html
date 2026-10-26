@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aide STAM</title>
+<meta name="description" content="Aide et contact pour l'application STAM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;family=Caveat:wght@600&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="entete gouttiere">
+  <div class="colonne">
+    <a class="marque" href="index.html" aria-label="STAM, accueil">STAM</a>
+    <nav class="nav" aria-label="Pages du site">
+      <a href="index.html">Accueil</a>
+      <a href="aide.html" aria-current="page">Aide</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page gouttiere">
+  <div class="colonne">
+    <h1>Aide et contact</h1>
+    <p class="maj">Une question sur STAM ? Écris-nous, nous répondons sous deux jours ouvrés.</p>
+
+    <div class="contact">
+      <code id="adresse">contact@stam.house</code>
+      <button class="bouton" type="button" id="copier">Copier l'adresse</button>
+    </div>
+
+    <h2>Questions fréquentes</h2>
+
+    <details>
+      <summary>Comment annuler mon abonnement ?</summary>
+      <p>L'abonnement est géré par ton téléphone. Sur iPhone et iPad : Réglages, ton nom, Abonnements, STAM. Sur Android : Google Play, ton profil, Paiements et abonnements, Abonnements, STAM. Si tu annules pendant la semaine d'essai, rien n'est débité.</p>
+    </details>
+
+    <details>
+      <summary>Comment partager ma liste de courses ?</summary>
+      <p>Dans Courses, touche « Partager ma liste » et envoie le lien, par exemple sur WhatsApp. La personne invitée voit uniquement cette liste. Tu peux retirer son accès à tout moment.</p>
+    </details>
+
+    <details>
+      <summary>Mon conjoint peut-il voir mon espace personnel ?</summary>
+      <p>Non. L'espace personnel et les questions au Rav ne sont jamais partagés, même avec la personne invitée pour les courses.</p>
+    </details>
+
+    <details>
+      <summary>Qui répond aux questions posées au Rav ?</summary>
+      <p>Des Rabbanim, personnellement. Aucune réponse n'est générée par une intelligence artificielle. Les questions ne passent pas par WhatsApp.</p>
+    </details>
+
+    <details>
+      <summary>Comment changer la photo de l'accueil ?</summary>
+      <p>Touche l'icône photo en haut de l'accueil, puis « Choisir une photo ». Elle reste uniquement sur ton téléphone. « Remettre la photo d'origine » permet de revenir aux bougies.</p>
+    </details>
+
+    <details>
+      <summary>Comment supprimer mon compte et mes données ?</summary>
+      <p>Depuis l'application, dans ton profil : « Supprimer mon compte ». Tes données sont effacées comme indiqué dans la <a href="confidentialite.html">politique de confidentialité</a>. Tu peux aussi nous écrire.</p>
+    </details>
+  </div>
+</main>
+
+<footer class="pied gouttiere">
+  <div class="colonne">
+    <span>© 2026 ELIEL — STAM</span>
+    <nav aria-label="Informations">
+      <a href="aide.html" aria-current="page">Aide et contact</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var bouton=document.getElementById('copier'),adresse=document.getElementById('adresse');
+    if(!bouton||!adresse)return;
+    function selectionner(){var r=document.createRange();r.selectNodeContents(adresse);var s=window.getSelection();s.removeAllRanges();s.addRange(r)}
+    bouton.addEventListener('click',function(){
+      var fait=function(){bouton.textContent='Adresse copiée'};
+      try{navigator.clipboard.writeText(adresse.textContent).then(fait,function(){selectionner();bouton.textContent='Adresse sélectionnée'})}
+      catch(e){selectionner();bouton.textContent='Adresse sélectionnée'}
+    });
+  })();
+</script>
+</body>
+</html>

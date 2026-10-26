@@ -1,0 +1,111 @@
+/* STAM — site stam.house. Même univers que l'application : crème, bordeaux, or, sauge.
+   Mise en page : colonne de lecture étroite, photo en tête d'accueil, pages légales en texte long. */
+:root{
+  --creme:#FAF4EC; --surface:#FFFAF5; --bordeaux:#6E2844; --bordeaux-fonce:#4F1A30;
+  --or:#BE925D; --or-texte:#8E6532; --sauge:#66745E; --rose:#F3E2E5;
+  --encre:#352831; --gris:#6B6060; --ligne:#E7DCD4;
+  --f-titre:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --f-texte:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --f-main:'Caveat','Segoe Script','Bradley Hand',cursive;
+  --largeur:42rem;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--creme);color:var(--encre);font-family:var(--f-texte);font-size:1.0625rem;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--bordeaux);text-decoration-color:var(--or);text-underline-offset:4px}
+a:hover{color:var(--bordeaux-fonce)}
+:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-titre);color:var(--bordeaux);font-weight:500;line-height:1.2;text-wrap:balance;margin:0}
+
+.gouttiere{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.colonne{max-width:var(--largeur);margin:0 auto}
+
+/* En-tête */
+.entete{padding-block:22px}
+.entete .colonne{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marque{font-family:var(--f-titre);font-weight:400;font-size:1.35rem;letter-spacing:.34em;color:var(--bordeaux);text-decoration:none}
+.nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.95rem}
+.nav a{text-decoration:none;color:var(--encre)}
+.nav a[aria-current="page"]{color:var(--bordeaux);text-decoration:underline;text-decoration-color:var(--or)}
+
+/* Accueil */
+.photo-tete{position:relative;max-width:64rem;margin:0 auto;border-radius:0 0 28px 28px;overflow:hidden}
+.photo-tete img{width:100%;height:min(62vw,430px);object-fit:cover;object-position:70% 50%}
+.photo-tete::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#FAF4ECF2 0%,#FAF4ECB3 42%,#FAF4EC00 72%)}
+.accroche{position:absolute;z-index:1;left:0;right:0;bottom:0;padding-block:28px}
+.accroche h1{font-size:clamp(2rem,6.5vw,3.4rem);max-width:13ch}
+.accroche p{margin:12px 0 0;max-width:28ch;color:var(--encre)}
+.mot-main{font-family:var(--f-main);font-weight:600;font-size:1.6rem;line-height:1.1;color:var(--or-texte)}
+
+.section{padding-block:44px}
+.section h2{font-size:1.6rem;margin-bottom:18px}
+.intro{font-size:1.15rem;max-width:36rem}
+
+.espaces{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ligne);margin:0;padding:0;list-style:none}
+.espaces li{padding:22px 18px 22px 0;border-bottom:1px solid var(--ligne);display:flex;flex-direction:column;gap:8px;min-width:0}
+.espaces li:nth-child(even){padding-left:18px;padding-right:0;border-left:1px solid var(--ligne)}
+.espaces svg{color:var(--or)}
+.espaces strong{font-weight:500;font-size:1.1rem;color:var(--encre)}
+.espaces span{font-size:.95rem;color:var(--gris)}
+.espaces .prive{grid-column:1/-1;padding:18px;margin-top:16px;border:0;border-radius:18px;background:var(--rose)}
+.espaces .prive:nth-child(even){border-left:0;padding-left:18px}
+.espaces .prive svg{color:var(--bordeaux)}
+
+.offre{background:var(--bordeaux);color:var(--surface);border-radius:24px;padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.offre h2{color:var(--surface);margin:0}
+.offre p{margin:0;color:#F0E1DE}
+.offre .prix{font-size:1.25rem;color:var(--surface)}
+.offre .prix strong{font-weight:300;font-size:2.4rem}
+.bientot{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.bientot span{border:1px solid #D6B07E;border-radius:999px;padding:8px 16px;font-size:.95rem}
+
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.photos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:60px 60px 6px 6px}
+
+/* Pages de texte */
+.page{padding-block:20px 56px}
+.page h1{font-size:clamp(1.9rem,6vw,2.6rem);margin-bottom:8px}
+.maj{color:var(--gris);font-size:.95rem;margin:0 0 28px}
+.page h2{font-size:1.3rem;margin:36px 0 10px;padding-top:20px;border-top:1px solid var(--ligne)}
+.page h3{font-size:1.08rem;color:var(--encre);margin:22px 0 6px}
+.page p,.page li{max-width:38rem}
+.page ul{padding-left:1.2rem}
+.page li{margin:6px 0}
+.encadre{background:var(--surface);border:1px solid var(--ligne);border-radius:18px;padding:18px 20px;margin:18px 0}
+.encadre p{margin:0}
+.fiche{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:8px 18px;margin:0}
+.fiche dt{color:var(--gris)}
+.fiche dd{margin:0;overflow-wrap:anywhere}
+.tableau{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.97rem}
+th,td{text-align:left;vertical-align:top;padding:12px 12px 12px 0;border-bottom:1px solid var(--ligne)}
+th{font-weight:500;color:var(--bordeaux)}
+.a-completer{background:#FBEFC8;border-radius:4px;padding:0 4px}
+.projet{background:var(--rose);color:var(--bordeaux-fonce);border-radius:14px;padding:12px 16px;margin:0 0 24px;font-size:.95rem}
+
+/* Aide */
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;background:var(--surface);border:1px solid var(--or);border-radius:20px;padding:18px 20px}
+.contact code{font-family:var(--f-texte);font-size:1.15rem;color:var(--bordeaux);user-select:all;overflow-wrap:anywhere}
+.bouton{font:inherit;font-size:.95rem;border:1px solid var(--or);background:transparent;color:var(--bordeaux);border-radius:999px;min-height:44px;padding:0 18px;cursor:pointer}
+details{border-bottom:1px solid var(--ligne);padding:14px 0}
+summary{cursor:pointer;font-weight:500;color:var(--encre);min-height:28px}
+details p{margin:10px 0 0}
+
+/* Pied de page */
+.pied{border-top:1px solid var(--ligne);padding-block:28px 40px;font-size:.92rem;color:var(--gris)}
+.pied .colonne{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
+.pied nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+
+@media (max-width:520px){
+  .photo-tete img{height:440px;object-position:68% 50%}
+  .photo-tete::after{background:linear-gradient(180deg,#FAF4EC00 20%,#FAF4ECE6 62%,#FAF4EC 100%)}
+  .espaces{grid-template-columns:minmax(0,1fr)}
+  .espaces li,.espaces li:nth-child(even){padding:18px 0;border-left:0}
+  .espaces .prive,.espaces .prive:nth-child(even){padding:18px}
+  .photos{gap:8px}
+  .fiche{grid-template-columns:minmax(0,1fr)}
+  .fiche dd{margin-bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
