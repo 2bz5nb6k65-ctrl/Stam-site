@@ -109,3 +109,7 @@ details p{margin:10px 0 0}
   .fiche dd{margin-bottom:10px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+.pied .editeur{margin:0;max-width:34rem;line-height:1.5}
+.pied .editeur strong{color:var(--encre);font-weight:500}
+.qui{border-top:1px solid var(--ligne)}
+.qui p{max-width:36rem;margin:0}
