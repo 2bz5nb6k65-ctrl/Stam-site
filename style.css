@@ -113,3 +113,6 @@ details p{margin:10px 0 0}
 .pied .editeur strong{color:var(--encre);font-weight:500}
 .qui{border-top:1px solid var(--ligne)}
 .qui p{max-width:36rem;margin:0}
+.page blockquote{margin:16px 0;padding:18px 20px;border:2px solid var(--bordeaux);border-radius:14px;background:var(--surface)}
+.page blockquote p{margin:0 0 10px}
+.page blockquote p:last-child{margin-bottom:0}

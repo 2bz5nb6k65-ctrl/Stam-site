@@ -25,175 +25,316 @@
 
 <main class="page gouttiere">
   <div class="colonne">
-<p class="projet">Texte à faire relire par un juriste avant le lancement. Les passages marqués « prévu » décrivent des fonctions qui ne sont pas encore en service ; les mentions surlignées sont à compléter.</p>
-
 <h1>Politique de confidentialité de STAM</h1>
-<p class="maj">Mise à jour le 26 octobre 2026</p>
-<p>STAM est une application d'organisation familiale : repas, courses, enfants, agenda, tâches, Chabbat et fêtes, et un espace personnel facultatif pour Taharat hamichpacha. Nous savons que certaines de ces informations sont très intimes. Cette politique explique simplement ce que nous en faisons.</p>
-<p><strong>En bref</strong></p>
+<p class="projet">Version en cours de finalisation avant la sortie de l’application. Les passages surlignés seront complétés ou confirmés avant la publication définitive.</p>
+
+<p>Version du 31 octobre 2026.</p>
+<h2>1 Responsable et principes</h2>
+<p>ELIEL, SARL à associé unique, 49 rue Voltaire, 92300 Levallois-Perret,
+France, RCS Nanterre 999 150 717, est responsable des traitements
+qu'elle détermine pour STAM. Contact : contact@stam.house.</p>
+<p>STAM aide à organiser les repas, les courses, l'agenda et la vie
+familiale. L'espace Taharat et les questions au Rav sont facultatifs.
+Nous ne vendons ni ne louons tes données et n'utilisons pas tes
+informations intimes à des fins publicitaires. Les fonctions décrites
+comme futures ne traitent aucune donnée tant qu'elles ne sont pas
+activées et présentées comme telles.</p>
+<h2>2 Données conservées sur ton appareil</h2>
+<p>Le profil du foyer, les prénoms ou surnoms et âges des enfants, les
+avatars, l'agenda, les devoirs et leurs photos, les tâches, les menus,
+les recettes personnelles, le budget, les tickets de caisse, la ville et
+la photo d'accueil sont conservés localement selon l'architecture
+déclarée de STAM. Le stock est également transmis au serveur lorsque tu
+actives les courses partagées. Les données locales ne sont pas envoyées
+dans la base STAM, sauf les informations que tu choisis expressément de
+partager ou d'insérer dans une question au Rav.</p>
+<p>Ces informations permettent les fonctions que tu demandes. Pour les
+données ordinaires te concernant et nécessaires au service, la base est
+l'exécution du contrat. Pour les données ordinaires des enfants relevant
+des traitements d'ELIEL, la base retenue est l’intérêt légitime à fournir l’organisation familiale, après mise en balance documentée.
+L'enfant n'est pas partie au contrat conclu avec le parent. Utilise un
+surnom ou un âge approximatif lorsqu'une identité ou une date précise
+n'est pas nécessaire. Évite les photos comportant des informations sur
+d'autres enfants et les détails médicaux dans les champs libres.</p>
+<p>Ton agenda reste sur cet appareil et n'est pas inclus dans la sauvegarde
+STAM, sauf la partie que tu choisis de partager avec le père de tes
+enfants (partie 4). Les sauvegardes de ton appareil, indépendantes de STAM, peuvent
+copier certaines autres données dans ton compte Apple ou Google selon tes
+réglages. Elles ne sont pas une synchronisation STAM et peuvent subsister
+après désinstallation. Sur iPhone, STAM demande au système d'exclure ton
+agenda, tes photos de devoirs et ton espace Taharat des sauvegardes
+iCloud et sur ordinateur ; Apple précise que cette exclusion n'est pas
+garantie dans tous les cas. Sur Android, les données de STAM sont
+exclues des sauvegardes Google et du transfert direct vers un autre
+téléphone. En contrepartie, en cas de perte, de panne ou de changement de
+téléphone, ces données sont perdues : les rendez-vous importés peuvent
+être réimportés depuis leur source, mais pas les événements saisis dans
+STAM.</p>
+<h2>3 Compte et abonnement</h2>
+<p>Les fonctions en ligne (courses partagées, questions au Rav) utilisent
+une session anonyme du service d'authentification Supabase : un
+identifiant technique propre à l'appareil, sans nom ni adresse
+électronique, créé lors de la première utilisation de ces fonctions.
+<span class="a-completer">Métadonnées conservées par le service d'authentification à confirmer.</span> La connexion avec Apple ou Google est prévue et n'est pas
+encore active à la date du dossier. Avant son activation, cette rubrique
+indiquera les données effectivement reçues : identifiant de connexion,
+adresse électronique éventuellement masquée et prénom si fourni. Base :
+exécution du contrat.</p>
+<p>Lorsque l'abonnement sera activé, Apple ou Google gérera le paiement.
+ELIEL ne recevra pas ton numéro de carte. Elle pourra recevoir les
+informations nécessaires à la vérification des droits d'accès, notamment
+l'état de l'abonnement, ses dates et un identifiant ou justificatif de
+transaction <span class="a-completer">champs exacts à confirmer</span>. Base : exécution du contrat ;
+obligations légales pour les pièces de gestion que nous devons
+conserver.</p>
+<h2>4 Courses partagées</h2>
+<p>Si tu actives le partage, la liste des produits, leurs états, le stock
+partagé, les identifiants des participants et les informations
+nécessaires aux invitations sont traités sur Supabase, dans le projet
+annoncé en région Paris. Base : exécution du service demandé par chaque
+participant.</p>
+<p>La personne invitée accède uniquement aux courses et au stock partagés.
+Elle n'accède pas à ton agenda, aux fiches des enfants, à Taharat ou aux
+conversations avec un Rav. Tu peux mettre fin au partage. Ce retrait
+empêche les accès futurs ; il ne peut effacer une information déjà vue
+ou copiée par la personne invitée. Le retrait prend effet immédiatement sur le serveur ; à sa prochaine
+actualisation, l'application de la personne invitée efface sa copie de
+la liste partagée.</p>
+<h3>Agenda des enfants partagé avec leur père</h3>
+<p>Si tu actives ce partage, STAM envoie sur Supabase (région Paris), pour
+que le père invité puisse les lire : les devoirs et contrôles des enfants
+(matière, consigne, fait ou non, sans photo), les événements, activités et
+rendez-vous que tu notes pour un enfant (intitulé, date, heure, durée,
+lieu, prénom de l'enfant) et les vacances scolaires, sur 14 jours passés
+et 180 jours à venir. Un rendez-vous dont l'intitulé ou le lieu est
+médical est envoyé seulement sous la forme « Rendez-vous », avec le
+prénom de l'enfant, la date et l'heure, sans praticien, motif ni lieu :
+transmets ces informations au père en dehors de STAM. Les rendez-vous
+importés d'un service comme Doctolib, tes propres rendez-vous, ceux de
+« Toute la famille », Taharat, les questions au Rav et les photos ne
+sont jamais envoyés. Base : exécution du service que tu demandes.</p>
+<p>Le père accède à cet agenda avec un code d'invitation à usage unique,
+valable sept jours, sans pouvoir le modifier. Il n'accède à rien
+d'autre. Son accès utilise une session anonyme propre à son téléphone.
+Tu peux retirer son accès (effet immédiat) ou arrêter le partage :
+l'agenda partagé est alors effacé du serveur. Le retrait ne peut effacer
+une information déjà vue ou copiée par le père. La suppression de ton
+compte efface aussi l'agenda partagé.</p>
+<h2>5 Espace Taharat</h2>
+<p>Cet espace traite, si tu l'actives, les dates et heures du cycle, le
+Hefsek, les jours propres, le mikvé, les paramètres de calcul, le lieu
+nécessaire aux horaires et les préférences de rappel. Ces informations
+peuvent révéler ta santé, ta vie sexuelle et tes convictions
+religieuses.</p>
+<p>Le traitement repose sur ton consentement, au titre de l'article 6
+paragraphe 1 a du RGPD, et ton consentement explicite aux données
+sensibles, au titre de l'article 9 paragraphe 2 a. Il est demandé
+séparément avant activation. Tu peux refuser en conservant les autres
+fonctions et retirer ton accord dans l'espace Taharat, « Réglages Taharat · mon accord et mes données ». Ce
+retrait arrête les traitements concernés et efface définitivement les données du module sur ton téléphone ; les rappels programmés sont annulés. La preuve de ton accord et de son retrait (version du texte, dates) est conservée sur le téléphone, sans aucune donnée du cycle.</p>
+<p>Les données de ce module sont conservées sur l'appareil, sans
+synchronisation dans la base STAM selon l'architecture déclarée. Les
+rappels sont programmés localement ; STAM n'envoie pas de SMS.
+Les rappels affichent un libellé neutre (« STAM · Rappel personnel ») ; le détail n'apparaît que dans l'application. Ils sont annulés au retrait de ton accord. Sur Android, les données de STAM sont exclues des sauvegardes Google dans la version publiée. <span class="a-completer">Exclusion de la sauvegarde iCloud sur iPhone : à mettre en place dans la version publiée.</span></p>
+<h2>6 Questions au Rav</h2>
+<p>Les questions, leur sujet, ton minhag si nécessaire, l'échéance
+souhaitée, les réponses et leurs dates sont transmis à Supabase pour
+permettre les échanges. Ils peuvent révéler santé, vie sexuelle et
+religion. Base : ton consentement et ton consentement explicite, selon
+les articles 6 paragraphe 1 a et 9 paragraphe 2 a du RGPD, recueillis
+avant le premier envoi. Le refus n'empêche pas d'utiliser les autres
+fonctions.</p>
+<p>Avant d'être prise en charge, une question est visible des Rabbanim habilités du minhag que tu as indiqué (de toute l'équipe si tu as choisi « à orienter ») ; une fois prise en charge, seul le Rav chargé de l'échange y accède. Le nom et l'adresse électronique du compte ne sont pas
+affichés au Rav ; tu peux toutefois être identifiable par ce que tu
+écris. Il s'agit donc de pseudonymisation, pas d'anonymat garanti. Évite
+de citer des tiers identifiables.</p>
+<p>Les Rabbanim sont soumis à une obligation de confidentialité. Les
+personnes habilitées d'ELIEL et les prestataires techniques peuvent
+accéder aux données dans la stricte mesure nécessaire à la sécurité, à
+l'administration ou à la résolution d'un incident, selon les
+habilitations définies. Il n'y a pas de réponse générée par intelligence
+artificielle ni de transmission des questions par WhatsApp. Les échanges
+ne sont pas réutilisés pour entraîner une IA ni pour de la publicité.</p>
+<p>Tu peux retirer ton consentement et effacer tes échanges dans « Questionner un Rav » (« Retirer mon accord et effacer mes échanges »), dans « Mon compte et mes données » ou à contact@stam.house. Le traitement cesse pour l'avenir ; le
+retrait ne remet pas en cause les opérations déjà réalisées légalement.
+Les éventuelles exceptions légales de conservation sont limitées et
+expliquées si elles s'appliquent.</p>
+<h2>7 Permissions et services externes</h2>
+<p>Les permissions ne sont demandées que pour une fonction qui en a besoin.
+Tu peux les modifier dans les réglages du téléphone. Une autorisation
+technique du système ne remplace pas un consentement RGPD lorsqu'il est
+nécessaire.</p>
+<p>La localisation peut aider à choisir une ville ou à trouver un mikvé ;
+une saisie manuelle est toujours proposée. Pour la recherche d'une ville,
+le texte tapé (nom ou code postal) est envoyé au service public
+geo.api.gouv.fr (État français), qui reçoit aussi, comme tout site
+consulté, l'adresse IP du téléphone. Les horaires de Chabbat et des fêtes
+sont demandés au serveur de STAM (Supabase, Paris), sans compte ni
+identifiant : seules les coordonnées de la ville choisie, arrondies à la
+précision d'une ville, le fuseau horaire et les dates sont transmises.
+C'est le serveur de STAM, et non ton téléphone, qui interroge le service
+de calcul Hebcal (hebcal.com, États-Unis) : Hebcal ne reçoit ni ton
+adresse IP, ni identifiant, ni cookie, ni aucune autre donnée te
+concernant, et les réponses sont gardées dans un cache commun par ville
+et par date (30 jours au plus). La
+position GPS éventuellement utilisée dans l'espace Taharat reste sur le
+téléphone et n'est envoyée à aucun service. Le bouton « Itinéraire »
+d'un mikvé ouvre Google Maps avec l'adresse du mikvé, à ta demande.
+Les données de localisation ne sont pas utilisées pour te
+suivre à des fins publicitaires.</p>
+<p>L'accès au calendrier, s'il est activé, permet de lire les événements
+autorisés par ton téléphone. Il ne constitue pas une connexion directe
+au compte Doctolib. Les événements lus restent sur le téléphone : ils ne
+sont ni copiés sur le serveur de STAM ni transmis à un tiers.
+Les photos et la caméra servent à tes images et devoirs ; les
+notifications servent aux rappels autorisés.</p>
+<p>L'extraction de dates à partir d'une photo par un prestataire externe
+n'est pas active. Elle ne sera proposée qu'après information sur le
+prestataire, les données envoyées, les durées et le fondement du
+traitement. Le contenu sensible ou les données de tiers nécessitent une
+analyse spécifique avant activation.</p>
+<h2>8 Site et données techniques</h2>
+<p>La consultation de stam.house entraîne le traitement de données
+techniques de connexion par l'hébergeur, même si le site ne contient pas
+les données de ton application. Les services en ligne peuvent traiter
+adresse IP, date, identifiant technique et informations d'erreur
+nécessaires à leur fonctionnement et à leur sécurité. Base pour les
+traitements de sécurité d'ELIEL : intérêt légitime à protéger le
+service, après évaluation de leur nécessité.</p>
+<p>Les questions au Rav et les informations Taharat doivent être exclues
+des journaux et des outils de diagnostic. Contrôle du code au
+27 octobre 2026 : en cas d'erreur, le serveur n'enregistre que le type
+d'erreur, sans contenu de question ni donnée Taharat, et les journaux de
+la plateforme Supabase ne gardent que des informations techniques
+d'appel (adresse IP, date, adresse appelée), sans le contenu envoyé ; l'application ne
+contient aucun outil de diagnostic, de mesure d'audience ou de
+publicité, et ses notifications sont locales et neutres. Aucun traceur
+nécessitant un consentement n'est présent ; s'il en était ajouté un, il
+ne serait activé qu'après ton accord.</p>
+<h2>9 Destinataires et transferts</h2>
+<p>Les destinataires sont les personnes habilitées d'ELIEL, les
+participants à un partage pour ses seules données, les Rabbanim
+habilités pour les échanges concernés et les prestataires nécessaires :</p>
 <ul>
-<li>La plupart de tes informations restent <strong>sur ton téléphone</strong>.</li>
-<li>Ton espace Taharat est <strong>privé</strong> : ni ton conjoint ni tes enfants n'y ont accès, et il n'est jamais partagé.</li>
-<li>Nous ne vendons aucune donnée, nous n'affichons pas de publicité et nous n'envoyons pas tes informations intimes à des outils de mesure d'audience.</li>
-<li>Les réponses aux questions posées à un Rav sont écrites par des Rabbanim bénévoles, <strong>jamais par une intelligence artificielle</strong>, et ne passent jamais par WhatsApp.</li>
+<li>Supabase : comptes, courses à deux, agenda des enfants partagé avec
+  leur père et questions au Rav (voir plus bas) ;</li>
+<li>GitHub Pages (GitHub, Inc., États-Unis) : hébergement du site
+  stam.house, sans données de l'application ;</li>
+<li>geo.api.gouv.fr (État français) : recherche de ville, texte tapé
+  seulement ;</li>
+<li>Hebcal (États-Unis) : calcul des horaires de Chabbat et des fêtes,
+  interrogé par le serveur de STAM uniquement ; il ne reçoit aucune
+  donnée personnelle (voir plus haut) ;</li>
+<li>Expo (650 Industries, Inc., États-Unis) : outil qui sert à fabriquer
+  l'application. La version publiée de STAM ne contacte pas Expo : elle
+  ne contient pas de mise à jour à distance et n'envoie aucune donnée à
+  Expo. Ses mises à jour passent uniquement par l'App Store et Google
+  Play ;</li>
+<li>Apple et Google : distribution de l'application et, lorsqu'il sera
+  activé, paiement de l'abonnement et connexion au compte.</li>
 </ul>
-<h2>1. Qui est responsable de tes données ?</h2>
-<p><strong>ELIEL</strong> (SARL à associé unique), 49 rue Voltaire, 92300 Levallois-Perret, France, RCS Nanterre 999 150 717, éditrice de l'application STAM.
-Pour toute question sur tes données : <strong>contact@stam.house</strong>.</p>
-<h2>2. Quelles données, pourquoi, et où sont-elles gardées ?</h2>
-<h3>2.1 Ton compte</h3>
+<p>Les rappels sont programmés sur le téléphone lui-même : aucun service
+d'envoi de notifications ne reçoit leur contenu. Ceux de Taharat restent
+neutres (« STAM · Rappel personnel »). Ceux de l'agenda, si tu les
+actives, affichent le programme du jour ; un rendez-vous médical n'y
+apparaît que sous la forme « Rendez-vous » et l'heure.
+Le partage d'une liste de courses par WhatsApp ou d'un calendrier
+n'a lieu que lorsque tu le demandes, avec l'application que tu choisis.
+STAM n'intègre aucun outil de publicité, de mesure d'audience ni de
+rapport de plantage. Le support se fait par e-mail à contact@stam.house,
+hébergé par OVH (France).</p>
+<p>Le stockage principal annoncé de la base est à Paris. Cette localisation
+n'exclut pas des accès ou opérations hors Espace économique européen. Le
+prestataire Supabase applicable est Supabase Pte. Ltd. (Singapour),
+selon l'accord de traitement des données Supabase (version 1 du
+1er août 2026), intégré aux conditions Supabase. Supabase indique que
+des données peuvent être transférées à sa société Supabase Inc.
+(États-Unis) et à ses sous-traitants (notamment Amazon Web Services pour
+l'hébergement de la base, Google Cloud pour les journaux) ; ces transferts
+sont encadrés par les clauses contractuelles types de la Commission
+européenne (décision 2021/914, module 2) et par une analyse d'impact des
+transferts publiée par Supabase (14 mars 2025). Les données sont chiffrées
+pendant le transport et au repos.</p>
+<p>Expo (650 Industries, Inc.) : aucune donnée des utilisatrices de la
+version publiée n'est transmise à Expo. Si un service Expo traitant des
+données des utilisatrices était ajouté (par exemple des mises à jour à
+distance), cette politique serait mise à jour avant ; ses conditions
+(version du 29 mai 2025, article 3.2 « RGPD » : sous-traitance et clauses
+contractuelles types de la Commission européenne) et sa certification au
+Data Privacy Framework UE–États-Unis encadreraient alors ces transferts.</p>
+<p>Hebcal : aucun transfert de données personnelles ; le service n'est
+interrogé que par le serveur de STAM, avec des paramètres de calcul
+seulement (voir plus haut). Tu peux demander une copie des garanties, sous réserve des
+occultations nécessaires, à contact@stam.house.</p>
+<p>Les conditions Supabase publiées prévoient des mécanismes de transfert,
+mais leur existence ne démontre pas à elle seule leur application à tous
+les flux de STAM. Cette rubrique doit être finalisée à partir des
+contrats et des accès réels, y compris ceux des Rabbanim.</p>
+<h2>10 Conservation</h2>
+<p>Les données locales sont gardées jusqu'à leur suppression sur
+l'appareil, sous réserve des sauvegardes et des mécanismes du système.
+Les informations du compte sont conservées pendant son activité, puis
+supprimées des bases actives dans un délai de 30 jours au plus après une demande valide.</p>
+<p>Durées appliquées (suppression automatique chaque nuit sur le serveur, en place depuis le 27 octobre 2026), sauf mention contraire :</p>
 <ul>
-<li><strong>Données</strong> : l'identifiant fourni par Apple ou Google lors de la connexion, ton adresse e-mail (qui peut être une adresse relais masquée par Apple), ton prénom.</li>
-<li><strong>Pourquoi</strong> : créer et retrouver ton espace, gérer ton abonnement.</li>
-<li><strong>Base légale</strong> : exécution du contrat (les conditions d'utilisation).</li>
-<li><em>Prévu</em> : la connexion Apple et Google n'est pas encore en service.</li>
+<li>
+<p>Courses : pendant le partage, puis suppression de la copie partagée
+    sous 30 jours après sa fin ; préciser le maintien éventuel des
+    listes personnelles de chaque participant.</p>
+</li>
+<li>
+<p>Agenda des enfants partagé : pendant le partage ; effacé du serveur
+    dès l'arrêt du partage ou la suppression du compte.</p>
+</li>
+<li>
+<p>Invitations : sept jours maximum, puis invalidation et effacement
+    des données non nécessaires.</p>
+</li>
+<li>
+<p>Conversations Rav : jusqu'à leur suppression, au retrait du
+    consentement ou à la suppression du compte ; à défaut, deux ans
+    après le dernier échange.</p>
+</li>
+<li>
+<p>Journaux techniques : 7 jours chez Supabase (offre Pro) ; éléments d'un incident conservés
+    séparément pour la durée justifiée par sa gestion ou une procédure.</p>
+</li>
+<li>
+<p>Sauvegardes serveur : une sauvegarde par jour, gardée 7 jours (offre Supabase Pro) ; une donnée effacée disparaît donc des sauvegardes au plus tard 7 jours après son effacement. Accès limité, sans réutilisation courante ; en cas de restauration, les suppressions faites depuis la sauvegarde sont appliquées de nouveau.</p>
+</li>
+<li>
+<p>Preuves contractuelles et de consentement : <span class="a-completer">catégories minimales, durée justifiée et accès restreint à définir</span>. Pièces comptables :
+    durée légale applicable aux pièces effectivement détenues, distincte
+    des conversations et données intimes.</p>
+</li>
 </ul>
-<h3>2.2 Ton foyer et ton organisation</h3>
-<ul>
-<li><strong>Données</strong> :</li>
-<li>situation du foyer ;</li>
-<li>enfants : prénom, date de naissance, avatar et couleur ;</li>
-<li>agenda : rendez-vous, anniversaires, zone de vacances scolaires ;</li>
-<li>devoirs et contrôles, avec la photo éventuelle ;</li>
-<li>tâches, menus, recettes personnelles, stock, budget et ticket de caisse ;</li>
-<li>ta ville et ta photo d'accueil.</li>
-<li><strong>Pourquoi</strong> : faire fonctionner l'application. Par exemple, la date de naissance de chaque enfant sert aux suggestions de repas selon son âge en mois, et ta ville sert aux horaires de Chabbat.</li>
-<li><strong>Où</strong> : <strong>sur ton téléphone uniquement</strong>. Ces informations ne sont pas envoyées à nos serveurs.</li>
-<li><strong>Base légale</strong> : exécution du contrat. Les informations sur tes enfants sont saisies par toi, en tant que parent.</li>
-</ul>
-<h3>2.3 Les courses partagées</h3>
-<ul>
-<li><strong>Données</strong> : produits à acheter, leur état (à acheter, dans le panier, introuvable), stock du foyer, et les comptes des deux participants.</li>
-<li><strong>Pourquoi</strong> : te permettre de partager ta liste avec une personne que tu invites.</li>
-<li><strong>Où</strong> : sur notre serveur hébergé dans l'Union européenne (<em>prévu</em>). La personne invitée ne voit <strong>que</strong> les courses et le stock. Elle n'a jamais accès à ton agenda, à tes enfants, à ton espace Taharat ni à tes questions au Rav. Tu peux lui retirer l'accès à tout moment, et ce retrait est immédiat.</li>
-<li><strong>Base légale</strong> : exécution du contrat.</li>
-</ul>
-<h3>2.4 Ton espace Taharat hamichpacha (facultatif)</h3>
-<ul>
-<li><strong>Données</strong> : dates et heures du cycle, Hefsek, sept jours propres, mikvé, durée habituelle du cycle, lieu utilisé pour les heures de lever et de coucher du soleil, préférences de rappels.</li>
-<li><strong>Nature</strong> : ce sont des <strong>données de santé et de vie intime</strong>, protégées particulièrement par la loi (article 9 du RGPD).</li>
-<li><strong>Où</strong> : <strong>sur ton téléphone uniquement</strong>. Les rappels sont des notifications programmées par ton téléphone ; ils ne passent pas par nos serveurs.</li>
-<li><strong>Base légale</strong> : ton <strong>consentement explicite</strong>, demandé quand tu actives cet espace. Tu peux le retirer à tout moment en désactivant l'espace.</li>
-<li>Les prévisions affichées (onot, ovulation possible) sont des repères. Elles ne constituent ni un avis médical ni un moyen de contraception.</li>
-</ul>
-<h3>2.5 Questionner un Rav</h3>
-<ul>
-<li><strong>Données</strong> : tes questions, le sujet, ton minhag, la date de réponse souhaitée, les messages échangés et la date de chaque message.</li>
-<li><strong>Nature</strong> : ces échanges peuvent révéler des données de santé, de vie intime et des convictions religieuses.</li>
-<li><strong>Destinataires</strong> : uniquement le Rav de l'équipe STAM qui prend ta question en charge, ou les Rabbanim de la file correspondant à ton minhag tant qu'elle n'est pas prise en charge.</li>
-<li><strong>Le Rav ne voit pas ton nom ni ton adresse e-mail.</strong></li>
-<li>Les Rabbanim sont bénévoles et tenus à la confidentialité.</li>
-<li><strong>Où</strong> : sur notre serveur hébergé dans l'Union européenne (<em>prévu</em> ; aujourd'hui, l'écran de l'application est une démonstration et rien n'est envoyé).</li>
-<li><strong>Base légale</strong> : ton consentement explicite, demandé avant ta première question.</li>
-<li><strong>Ce que nous ne faisons pas</strong> : aucune transmission par WhatsApp, aucune réponse générée par une intelligence artificielle, aucune analyse du contenu de tes questions.</li>
-</ul>
-<h3>2.6 Convictions religieuses</h3>
-<p>L'usage de STAM (Chabbat, fêtes, cacherout, minhag) peut révéler des convictions religieuses. Ces informations servent uniquement à adapter l'application pour toi et restent sur ton téléphone, sauf ce qui est décrit aux points 2.3 et 2.5.</p>
-<h3>2.7 Permissions du téléphone</h3>
-<p>Chaque permission n'est demandée qu'au moment où tu utilises la fonction, et tu peux la refuser.</p>
-<ul>
-<li><strong>Localisation</strong> : trouver ta ville pour les horaires de Chabbat et l'annuaire des mikvaot. Utilisée sur le moment, non conservée par nous.</li>
-<li><strong>Calendrier du téléphone</strong> : afficher tes événements, par exemple tes rendez-vous Doctolib, dans l'agenda STAM, en lecture seule. Ces événements ne sont ni copiés ni envoyés.</li>
-<li><strong>Photos et appareil photo</strong> : photo d'accueil et photos de devoirs, gardées sur ton téléphone.</li>
-<li><strong>Notifications</strong> : rappels Taharat. STAM n’envoie aucun SMS.</li>
-</ul>
-<h3>2.8 Abonnement et paiement</h3>
-<p>Le paiement est géré par Apple (App Store) ou Google (Google Play). <strong>Nous ne recevons jamais tes coordonnées bancaires</strong> ; nous recevons seulement l'état de ton abonnement (essai, actif, résilié). <em>Prévu</em> : l'abonnement n'est pas encore en service.</p>
-<h3>2.9 Fonctions prévues faisant appel à un prestataire</h3>
-<ul>
-<li><strong>Import du planning en photo</strong> : la photo serait transmise à un service de lecture d'images pour en extraire les dates, puis effacée. Nous ne la conservons pas. Le prestataire sera indiqué ici avant la mise en service.</li>
-</ul>
-<h3>2.10 Données techniques</h3>
-<p>Journaux techniques du serveur : date, type de requête, erreurs. Ils ne contiennent jamais le texte de tes messages, de tes questions ou de tes données Taharat.</p>
-<ul>
-<li><strong>Pourquoi</strong> : sécurité et bon fonctionnement.</li>
-<li><strong>Base légale</strong> : notre intérêt légitime.</li>
-</ul>
-<h2>3. Combien de temps ?</h2>
-<p><em>Durées proposées, à valider.</em></p>
-<div class="tableau"><table>
-<thead>
-<tr>
-<th>Données</th>
-<th>Durée</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Données gardées sur ton téléphone</td>
-<td>Jusqu'à ce que tu les supprimes ou désinstalles l'application</td>
-</tr>
-<tr>
-<td>Compte</td>
-<td>Tant que le compte est actif ; supprimé dans les 30 jours après ta demande de suppression</td>
-</tr>
-<tr>
-<td>Courses partagées</td>
-<td>Tant que le partage existe ; supprimées avec le compte de la personne qui partage</td>
-</tr>
-<tr>
-<td>Invitations aux courses</td>
-<td>7 jours au plus (expiration automatique)</td>
-</tr>
-<tr>
-<td>Questions au Rav</td>
-<td>Jusqu'à ce que tu supprimes l'échange ou ton compte</td>
-</tr>
-<tr>
-<td>Journaux techniques</td>
-<td><span class="a-completer">[À COMPLÉTER — 12 mois au plus proposé]</span></td>
-</tr>
-<tr>
-<td>Sauvegardes du serveur</td>
-<td><span class="a-completer">[À COMPLÉTER — 30 jours proposé]</span>, puis effacées</td>
-</tr>
-</tbody>
-</table></div>
-<h2>4. Avec qui ?</h2>
-<p>Nous ne vendons ni ne louons aucune donnée.</p>
-<p><strong>Prestataires</strong>, uniquement pour faire fonctionner le service :</p>
-<ul>
-<li>hébergeur du serveur, une fois en service : <span class="a-completer">[À COMPLÉTER — Union européenne envisagée]</span> ;</li>
-<li>GitHub (GitHub Pages) : hébergement du site stam.house, qui ne contient aucune donnée de l'application ;</li>
-<li>Apple et Google : connexion, paiement, notifications ;</li>
-<li>Expo : distribution des mises à jour de l'application, sans accès à tes données ;</li>
-<li>et, s'il est activé, le fournisseur de lecture d'images.</li>
-</ul>
-<p><strong>Autres destinataires :</strong></p>
-<ul>
-<li>la personne que tu invites aux courses, pour les seules courses ;</li>
-<li>le Rav qui prend ta question.</li>
-</ul>
-<p>Certains prestataires peuvent traiter des données hors de l'Union européenne (par exemple Apple et Google pour les notifications). Ces transferts sont encadrés par les garanties prévues par le RGPD <span class="a-completer">[À COMPLÉTER : mécanismes exacts]</span>.</p>
-<h2>5. Sécurité</h2>
-<ul>
-<li>Connexions chiffrées.</li>
-<li>Accès limité à chaque personne autorisée, vérifié par le serveur à chaque demande.</li>
-<li>Codes d'invitation dont seule l'empreinte est conservée.</li>
-<li>Comptes Rav créés uniquement par l'équipe STAM.</li>
-<li><em>Prévu</em> : verrouillage de l'espace Taharat par code ou biométrie.</li>
-</ul>
-<h2>6. Tes droits</h2>
-<p>Tu peux à tout moment :</p>
-<ul>
-<li>accéder à tes données ;</li>
-<li>les rectifier ;</li>
-<li>les effacer ;</li>
-<li>les récupérer dans un format lisible (portabilité) ;</li>
-<li>t'opposer à un traitement ou le limiter ;</li>
-<li>retirer ton consentement, sans que cela remette en cause ce qui a été fait avant.</li>
-</ul>
-<p>Écris-nous à contact@stam.house. Nous répondons dans un délai d'un mois.</p>
-<p>Tu peux aussi supprimer toi-même tes données :</p>
-<ul>
-<li>dans l'application : supprimer un échange avec un Rav, désactiver l'espace Taharat, retirer l'accès aux courses ;</li>
-<li><em>prévu</em> : supprimer ton compte depuis l'application.</li>
-</ul>
-<p>Si tu estimes que tes droits ne sont pas respectés, tu peux saisir la <strong>CNIL</strong> (www.cnil.fr).</p>
-<h2>7. Mineurs</h2>
-<p>STAM s'adresse aux adultes. Les informations concernant les enfants sont saisies par leur parent et restent sur son téléphone.</p>
-<h2>8. Modifications</h2>
-<p>En cas de changement important, nous te prévenons dans l'application avant qu'il s'applique.</p>
+<h2>11 Sécurité et droits</h2>
+<p>Nous mettons en œuvre des mesures adaptées à la sensibilité des données
+: chiffrement des communications, limitation des habilitations et
+contrôle des accès. <span class="a-completer">Confirmer authentification renforcée des administrateurs et Rabbanim, protection locale, stockage des secrets, révocation et procédures d'incident.</span> Aucun dispositif n'assure un
+risque nul. Protège ton téléphone et ses sauvegardes. Le verrouillage
+spécifique de Taharat reste <span class="a-completer">non disponible / disponible, selon la version réelle</span>.</p>
+<p>Selon les conditions prévues par le RGPD, tu disposes de droits d'accès,
+rectification, effacement, limitation et portabilité, ainsi que
+d'opposition aux traitements fondés sur l'intérêt légitime et de retrait
+du consentement. Tu peux aussi définir des directives concernant tes
+données après ton décès dans les conditions du droit français. Aucun
+profilage produisant une décision à effet juridique ou similaire n'est
+prévu dans STAM.</p>
+<p>Adresse ta demande à contact@stam.house. Nous répondons en principe sous
+un mois ; une prolongation motivée de deux mois est possible pour une
+demande complexe ou de nombreuses demandes, avec information dans le
+premier mois. Une vérification proportionnée de ton identité peut être
+nécessaire. Pour les seules données locales auxquelles nous n'avons pas
+accès, nous t'indiquons les commandes permettant d'exercer tes droits
+sur ton appareil.</p>
+<p>La suppression du compte est accessible dans « Mes espaces » → « Mon compte et mes données » → « Supprimer mon compte et mes données » ; elle efface les données du serveur, le compte de connexion et les données du téléphone. Elle est distincte de la résiliation de l'abonnement
+Apple ou Google. Tu peux saisir la CNIL sur
+https://www.cnil.fr/fr/plaintes. STAM est destinée aux adultes ; les
+informations des enfants sont saisies par un titulaire de l'autorité
+parentale. Les changements importants de traitement seront expliqués
+avant leur application et un nouveau consentement sera recueilli lorsque
+nécessaire.</p>
   </div>
 </main>
 
