@@ -28,7 +28,7 @@
 <h1>Politique de confidentialité de STAM</h1>
 <p class="projet">Version en cours de finalisation avant la sortie de l’application. Les passages surlignés seront complétés ou confirmés avant la publication définitive.</p>
 
-<p>Version du 31 octobre 2026.</p>
+<p>Version du 1er novembre 2026.</p>
 <h2>1 Responsable et principes</h2>
 <p>ELIEL, SARL à associé unique, 49 rue Voltaire, 92300 Levallois-Perret,
 France, RCS Nanterre 999 150 717, est responsable des traitements
@@ -114,8 +114,9 @@ importés d'un service comme Doctolib, tes propres rendez-vous, ceux de
 « Toute la famille », Taharat, les questions au Rav et les photos ne
 sont jamais envoyés. Base : exécution du service que tu demandes.</p>
 <p>Le père accède à cet agenda avec un code d'invitation à usage unique,
-valable sept jours, sans pouvoir le modifier. Il n'accède à rien
-d'autre. Son accès utilise une session anonyme propre à son téléphone.
+valable sept jours, sans pouvoir le modifier. Si tu as indiqué être en
+couple ou mariée, la même invitation lui donne aussi accès à ta liste de
+courses partagée (voir ci-dessus) ; sinon, il n'accède à rien d'autre. Son accès utilise une session anonyme propre à son téléphone.
 Tu peux retirer son accès (effet immédiat) ou arrêter le partage :
 l'agenda partagé est alors effacé du serveur. Le retrait ne peut effacer
 une information déjà vue ou copiée par le père. La suppression de ton
@@ -160,6 +161,20 @@ retrait ne remet pas en cause les opérations déjà réalisées légalement.
 Les éventuelles exceptions légales de conservation sont limitées et
 expliquées si elles s'appliquent.</p>
 <h2>7 Permissions et services externes</h2>
+<h3>Lecture d'une photo (devoirs, planning, vacances)</h3>
+<p>Si tu demandes à STAM de lire une photo (cahier de devoirs, planning,
+calendrier de vacances), la photo, réduite, est envoyée au serveur de
+STAM (Supabase, Paris), qui la transmet à Mistral AI (société française,
+traitement en Europe), sous-traitant d'ELIEL, uniquement pour en lire le
+texte. Aucun prénom ni identifiant n'est envoyé ; la photo elle-même peut
+toutefois contenir des informations, comme le prénom de l'enfant ou son
+école. Ni la photo ni le texte lu ne sont conservés par STAM : seul un
+compteur du nombre de photos lues par jour est gardé, pour limiter
+l'usage, et effacé après deux jours. Mistral AI traite la photo selon ses
+conditions d'utilisation de l'API. Ce qui est lu t'est
+proposé pour vérification : rien n'est ajouté à ton agenda sans ta
+validation. N'envoie pas de document médical. Base : exécution du
+service que tu demandes.</p>
 <p>Les permissions ne sont demandées que pour une fonction qui en a besoin.
 Tu peux les modifier dans les réglages du téléphone. Une autorisation
 technique du système ne remplace pas un consentement RGPD lorsqu'il est
@@ -188,11 +203,6 @@ au compte Doctolib. Les événements lus restent sur le téléphone : ils ne
 sont ni copiés sur le serveur de STAM ni transmis à un tiers.
 Les photos et la caméra servent à tes images et devoirs ; les
 notifications servent aux rappels autorisés.</p>
-<p>L'extraction de dates à partir d'une photo par un prestataire externe
-n'est pas active. Elle ne sera proposée qu'après information sur le
-prestataire, les données envoyées, les durées et le fondement du
-traitement. Le contenu sensible ou les données de tiers nécessitent une
-analyse spécifique avant activation.</p>
 <h2>8 Site et données techniques</h2>
 <p>La consultation de stam.house entraîne le traitement de données
 techniques de connexion par l'hébergeur, même si le site ne contient pas
@@ -218,6 +228,8 @@ habilités pour les échanges concernés et les prestataires nécessaires :</p>
 <ul>
 <li>Supabase : comptes, courses à deux, agenda des enfants partagé avec
   leur père et questions au Rav (voir plus bas) ;</li>
+<li>Mistral AI (France, traitement en Europe) : lecture des photos de
+  devoirs, de plannings et de calendriers de vacances, à ta demande ;</li>
 <li>GitHub Pages (GitHub, Inc., États-Unis) : hébergement du site
   stam.house, sans données de l'application ;</li>
 <li>geo.api.gouv.fr (État français) : recherche de ville, texte tapé
