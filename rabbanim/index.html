@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>STAM — Espace Rabbanim</title>
+<link rel="stylesheet" href="portail.css">
+</head>
+<body class="rav-team">
+<main>
+  <div class="rav-team-header">
+    <h1>Espace Rabbanim</h1>
+    <span><button type="button" class="btn secondary" id="changePassword" hidden>Changer mon mot de passe</button> <button type="button" class="btn secondary" id="logout" hidden>Se déconnecter</button></span>
+  </div>
+  <p class="rav-small">Les réponses sont rédigées par les Rabbanim bénévoles de l’équipe. STAM ne publie aucune réponse automatique et ne transmet rien par WhatsApp. L’identité des utilisatrices n’est pas affichée.</p>
+
+  <section class="rav-team-panel rav-login" id="login">
+    <h2>Connexion</h2>
+    <p class="rav-small">Connecte-toi avec l’e-mail et le mot de passe que l’équipe STAM t’a donnés. Pense à changer ton mot de passe après la première connexion.</p>
+    <label>E-mail<input id="email" type="email" autocomplete="username" spellcheck="false"></label>
+    <label>Mot de passe<input id="password" type="password" autocomplete="current-password"></label>
+    <button type="button" class="btn" id="connect">Ouvrir mon espace</button>
+    <p class="rav-error" id="loginError" role="status"></p>
+  </section>
+
+  <div class="rav-team-layout" id="space" hidden>
+    <section class="rav-team-panel">
+      <h2>Ma disponibilité</h2>
+      <p class="rav-who" id="who"></p>
+      <div class="rav-availability">
+        <strong id="availability"></strong>
+        <button type="button" class="btn secondary" id="toggle">Changer ma disponibilité</button>
+      </div>
+      <h2>Questions de mon minhag</h2>
+      <p class="rav-small">Les questions non orientées sont visibles par toute l’équipe. Une question prise en charge reste attribuée au même Rav pour le suivi.</p>
+      <div id="queue" aria-live="polite"></div>
+    </section>
+    <section class="rav-team-panel">
+      <h2>Échange dans STAM</h2>
+      <div id="thread"><p class="rav-team-empty">Choisis une question à gauche.</p></div>
+      <p id="error" class="rav-error" role="status"></p>
+    </section>
+  </div>
+</main>
+<script src="config.js"></script>
+<script src="portail.js"></script>
+</body>
+</html>
