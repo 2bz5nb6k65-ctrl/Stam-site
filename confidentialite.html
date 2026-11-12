@@ -26,9 +26,7 @@
 <main class="page gouttiere">
   <div class="colonne">
 <h1>Politique de confidentialité de STAM</h1>
-<p class="projet">Version en cours de finalisation avant la sortie de l’application. Les passages surlignés seront complétés ou confirmés avant la publication définitive.</p>
-
-<p>Version du 2 novembre 2026.</p>
+<p>Version du 1er décembre 2026.</p>
 <h2>1 Responsable et principes</h2>
 <p>ELIEL, SARL à associé unique, 49 rue Voltaire, 92300 Levallois-Perret,
 France, RCS Nanterre 999 150 717, est responsable des traitements
@@ -36,9 +34,9 @@ qu'elle détermine pour STAM. Contact : contact@stam.house.</p>
 <p>STAM aide à organiser les repas, les courses, l'agenda et la vie
 familiale. L'espace Taharat et les questions au Rav sont facultatifs.
 Nous ne vendons ni ne louons tes données et n'utilisons pas tes
-informations intimes à des fins publicitaires. Les fonctions décrites
-comme futures ne traitent aucune donnée tant qu'elles ne sont pas
-activées et présentées comme telles.</p>
+informations intimes à des fins publicitaires. Cette politique décrit
+les seules fonctions présentes dans l'application ; toute nouvelle
+fonction traitant des données sera décrite ici avant sa mise en service.</p>
 <h2>2 Données conservées sur ton appareil</h2>
 <p>Le profil du foyer, les prénoms ou surnoms et âges des enfants, les
 avatars, l'agenda, les devoirs et leurs photos, les tâches, les menus,
@@ -50,8 +48,15 @@ dans la base STAM, sauf les informations que tu choisis expressément de
 partager ou d'insérer dans une question au Rav.</p>
 <p>Ces informations permettent les fonctions que tu demandes. Pour les
 données ordinaires te concernant et nécessaires au service, la base est
-l'exécution du contrat. Pour les données ordinaires des enfants relevant
-des traitements d'ELIEL, la base retenue est l’intérêt légitime à fournir l’organisation familiale, après mise en balance documentée.
+l'exécution du contrat. Les données de tes enfants que tu saisis (prénom ou surnom,
+âge ou date de naissance, devoirs, activités, rendez-vous) sont traitées
+sur la base de l'intérêt légitime (article 6 paragraphe 1 f du RGPD) :
+permettre au parent qui utilise STAM d'organiser la vie de sa famille.
+Cet intérêt est mis en balance avec les droits des enfants : ces
+données restent sur ton téléphone, sauf la partie que tu choisis de
+partager avec leur père, elles ne servent à aucune autre fin (ni
+publicité, ni profilage, ni entraînement d'IA) et tu peux les modifier
+ou les supprimer à tout moment.
 L'enfant n'est pas partie au contrat conclu avec le parent. Utilise un
 surnom ou un âge approximatif lorsqu'une identité ou une date précise
 n'est pas nécessaire. Évite les photos comportant des informations sur
@@ -75,16 +80,17 @@ STAM.</p>
 une session anonyme du service d'authentification Supabase : un
 identifiant technique propre à l'appareil, sans nom ni adresse
 électronique, créé lors de la première utilisation de ces fonctions.
-<span class="a-completer">Métadonnées conservées par le service d'authentification à confirmer.</span> La connexion avec Apple ou Google est prévue et n'est pas
-encore active à la date du dossier. Avant son activation, cette rubrique
-indiquera les données effectivement reçues : identifiant de connexion,
-adresse électronique éventuellement masquée et prénom si fourni. Base :
-exécution du contrat.</p>
-<p>Lorsque l'abonnement sera activé, Apple ou Google gérera le paiement.
-ELIEL ne recevra pas ton numéro de carte. Elle pourra recevoir les
-informations nécessaires à la vérification des droits d'accès, notamment
-l'état de l'abonnement, ses dates et un identifiant ou justificatif de
-transaction <span class="a-completer">champs exacts à confirmer</span>. Base : exécution du contrat ;
+Le service d'authentification conserve, pour cet identifiant, ses dates
+de création et de dernière utilisation ; les journaux techniques
+d'accès (adresse IP, date, adresse appelée) sont conservés 7 jours.
+STAM ne propose pas de connexion avec un compte Apple, Google ou une
+adresse électronique. Base : exécution du contrat.</p>
+<p>Apple ou Google gère le paiement de l'abonnement. ELIEL ne reçoit pas
+ton numéro de carte. L'application lit sur ton téléphone, auprès de la
+boutique, l'état de ton abonnement (formule, dates, renouvellement) pour
+ouvrir l'accès ; ces informations restent sur le téléphone et ne sont
+pas envoyées au serveur STAM. ELIEL reçoit des boutiques des rapports de
+ventes sans identité nominative. Base : exécution du contrat ;
 obligations légales pour les pièces de gestion que nous devons
 conserver.</p>
 <h2>4 Courses partagées</h2>
@@ -137,7 +143,7 @@ retrait arrête les traitements concernés et efface définitivement les donnée
 <p>Les données de ce module sont conservées sur l'appareil, sans
 synchronisation dans la base STAM selon l'architecture déclarée. Les
 rappels sont programmés localement ; STAM n'envoie pas de SMS.
-Les rappels affichent un libellé neutre (« STAM · Rappel personnel ») ; le détail n'apparaît que dans l'application. Ils sont annulés au retrait de ton accord. Sur Android, les données de STAM sont exclues des sauvegardes Google dans la version publiée. <span class="a-completer">Exclusion de la sauvegarde iCloud sur iPhone : à mettre en place dans la version publiée.</span></p>
+Les rappels affichent un libellé neutre (« STAM · Rappel personnel ») ; le détail n'apparaît que dans l'application. Ils sont annulés au retrait de ton accord. Sur Android, les données de STAM sont exclues des sauvegardes Google ; sur iPhone, STAM demande au système d'exclure ces données des sauvegardes iCloud et sur ordinateur.</p>
 <h2>6 Questions au Rav</h2>
 <p>Les questions, leur sujet, ton minhag si nécessaire, l'échéance
 souhaitée, les réponses et leurs dates sont transmis à Supabase pour
@@ -207,7 +213,8 @@ autorisés par ton téléphone. Il ne constitue pas une connexion directe
 au compte Doctolib. Les événements lus restent sur le téléphone : ils ne
 sont ni copiés sur le serveur de STAM ni transmis à un tiers.
 Les photos et la caméra servent à tes images et devoirs ; les
-notifications servent aux rappels autorisés.</p>
+notifications servent aux rappels autorisés et, si tu poses une question
+au Rav et l'autorises, à t'avertir d'une réponse.</p>
 <h2>8 Site et données techniques</h2>
 <p>La consultation de stam.house entraîne le traitement de données
 techniques de connexion par l'hébergeur, même si le site ne contient pas
@@ -223,7 +230,7 @@ d'erreur, sans contenu de question ni donnée Taharat, et les journaux de
 la plateforme Supabase ne gardent que des informations techniques
 d'appel (adresse IP, date, adresse appelée), sans le contenu envoyé ; l'application ne
 contient aucun outil de diagnostic, de mesure d'audience ou de
-publicité, et ses notifications sont locales et neutres. Aucun traceur
+publicité, et ses notifications sont neutres. Aucun traceur
 nécessitant un consentement n'est présent ; s'il en était ajouté un, il
 ne serait activé qu'après ton accord.</p>
 <h2>9 Destinataires et transferts</h2>
@@ -243,15 +250,24 @@ habilités pour les échanges concernés et les prestataires nécessaires :</p>
   interrogé par le serveur de STAM uniquement ; il ne reçoit aucune
   donnée personnelle (voir plus haut) ;</li>
 <li>Expo (650 Industries, Inc., États-Unis) : outil qui sert à fabriquer
-  l'application. La version publiée de STAM ne contacte pas Expo : elle
-  ne contient pas de mise à jour à distance et n'envoie aucune donnée à
-  Expo. Ses mises à jour passent uniquement par l'App Store et Google
-  Play ;</li>
-<li>Apple et Google : distribution de l'application et, lorsqu'il sera
-  activé, paiement de l'abonnement et connexion au compte.</li>
+  l'application, et service d'envoi de la notification « nouveau
+  message » quand un Rav répond (voir plus bas). La version publiée ne
+  contient pas de mise à jour à distance ; ses mises à jour passent
+  uniquement par l'App Store et Google Play ;</li>
+<li>Google (Firebase Cloud Messaging) et Apple (Apple Push Notification
+  service) : acheminement de cette notification jusqu'au téléphone ;</li>
+<li>Apple et Google : distribution de l'application et paiement de
+  l'abonnement.</li>
 </ul>
 <p>Les rappels sont programmés sur le téléphone lui-même : aucun service
-d'envoi de notifications ne reçoit leur contenu. Ceux de Taharat restent
+d'envoi de notifications ne reçoit leur contenu. Seule exception : si tu
+poses une question au Rav et autorises les notifications, ton téléphone
+transmet au serveur de STAM son adresse de notification, et le serveur
+t'envoie « STAM · Nouveau message dans ton espace privé » quand un Rav
+répond. Cette notification ne contient ni le sujet, ni le texte, ni le
+nom du Rav ; elle passe par Expo puis par Google ou Apple. L'adresse de
+notification est effacée au retrait de ton accord pour les questions au
+Rav ou à la suppression du compte. Ceux de Taharat restent
 neutres (« STAM · Rappel personnel »). Ceux de l'agenda, si tu les
 actives, affichent le programme du jour ; un rendez-vous médical n'y
 apparaît que sous la forme « Rendez-vous » et l'heure.
@@ -272,13 +288,13 @@ sont encadrés par les clauses contractuelles types de la Commission
 européenne (décision 2021/914, module 2) et par une analyse d'impact des
 transferts publiée par Supabase (14 mars 2025). Les données sont chiffrées
 pendant le transport et au repos.</p>
-<p>Expo (650 Industries, Inc.) : aucune donnée des utilisatrices de la
-version publiée n'est transmise à Expo. Si un service Expo traitant des
-données des utilisatrices était ajouté (par exemple des mises à jour à
-distance), cette politique serait mise à jour avant ; ses conditions
+<p>Expo (650 Industries, Inc.) : seules l'adresse de notification du
+téléphone et la notification neutre décrite plus haut lui sont
+transmises, et seulement si tu poses une question au Rav et autorises
+les notifications. Ses conditions
 (version du 29 mai 2025, article 3.2 « RGPD » : sous-traitance et clauses
 contractuelles types de la Commission européenne) et sa certification au
-Data Privacy Framework UE–États-Unis encadreraient alors ces transferts.</p>
+Data Privacy Framework UE–États-Unis encadrent ces transferts.</p>
 <p>Hebcal : aucun transfert de données personnelles ; le service n'est
 interrogé que par le serveur de STAM, avec des paramètres de calcul
 seulement (voir plus haut). Tu peux demander une copie des garanties, sous réserve des
@@ -290,14 +306,16 @@ contrats et des accès réels, y compris ceux des Rabbanim.</p>
 <h2>10 Conservation</h2>
 <p>Les données locales sont gardées jusqu'à leur suppression sur
 l'appareil, sous réserve des sauvegardes et des mécanismes du système.
-Les informations du compte sont conservées pendant son activité, puis
-supprimées des bases actives dans un délai de 30 jours au plus après une demande valide.</p>
+Les informations du compte sont conservées pendant son activité. Elles
+sont supprimées immédiatement des bases actives quand tu supprimes ton
+compte dans l'application, et au plus tard 30 jours après une demande
+valide adressée par e-mail.</p>
 <p>Durées appliquées (suppression automatique chaque nuit sur le serveur, en place depuis le 27 octobre 2026), sauf mention contraire :</p>
 <ul>
 <li>
 <p>Courses : pendant le partage, puis suppression de la copie partagée
-    sous 30 jours après sa fin ; préciser le maintien éventuel des
-    listes personnelles de chaque participant.</p>
+    sur le serveur sous 30 jours après sa fin ; la liste personnelle de
+    chaque participant reste sur son propre téléphone.</p>
 </li>
 <li>
 <p>Agenda des enfants partagé : pendant le partage ; effacé du serveur
@@ -313,6 +331,11 @@ supprimées des bases actives dans un délai de 30 jours au plus après une dema
     après le dernier échange.</p>
 </li>
 <li>
+<p>Adresse de notification (réponses du Rav) : jusqu'au retrait du
+    consentement Rav, à la suppression du compte, ou dès que le service
+    de notification la déclare invalide.</p>
+</li>
+<li>
 <p>Journaux techniques : 7 jours chez Supabase (offre Pro) ; éléments d'un incident conservés
     séparément pour la durée justifiée par sa gestion ou une procédure.</p>
 </li>
@@ -320,7 +343,11 @@ supprimées des bases actives dans un délai de 30 jours au plus après une dema
 <p>Sauvegardes serveur : une sauvegarde par jour, gardée 7 jours (offre Supabase Pro) ; une donnée effacée disparaît donc des sauvegardes au plus tard 7 jours après son effacement. Accès limité, sans réutilisation courante ; en cas de restauration, les suppressions faites depuis la sauvegarde sont appliquées de nouveau.</p>
 </li>
 <li>
-<p>Preuves contractuelles et de consentement : <span class="a-completer">catégories minimales, durée justifiée et accès restreint à définir</span>. Pièces comptables :
+<p>Preuves de consentement : pour les questions au Rav, version du
+    texte accepté, son empreinte et les dates d'accord et de retrait,
+    conservées sur le serveur, en accès restreint, jusqu'à la
+    suppression du compte ; pour Taharat, sur le téléphone seulement.
+    Pièces comptables :
     durée légale applicable aux pièces effectivement détenues, distincte
     des conversations et données intimes.</p>
 </li>
@@ -328,9 +355,15 @@ supprimées des bases actives dans un délai de 30 jours au plus après une dema
 <h2>11 Sécurité et droits</h2>
 <p>Nous mettons en œuvre des mesures adaptées à la sensibilité des données
 : chiffrement des communications, limitation des habilitations et
-contrôle des accès. <span class="a-completer">Confirmer authentification renforcée des administrateurs et Rabbanim, protection locale, stockage des secrets, révocation et procédures d'incident.</span> Aucun dispositif n'assure un
-risque nul. Protège ton téléphone et ses sauvegardes. Le verrouillage
-spécifique de Taharat reste <span class="a-completer">non disponible / disponible, selon la version réelle</span>.</p>
+contrôle des accès. Chaque Rav se connecte avec un identifiant et un
+mot de passe personnels, et son accès peut être retiré immédiatement ;
+l'administration est réservée aux comptes d'ELIEL ; les clés techniques
+sont gardées dans les coffres sécurisés des prestataires, jamais dans
+l'application ; un incident est traité selon une procédure de
+notification à la CNIL et aux personnes concernées lorsque la loi
+l'exige. Aucun dispositif n'assure un risque nul. Protège ton téléphone
+et ses sauvegardes : l'espace Taharat n'a pas de verrouillage propre, il
+est protégé par le code de ton téléphone.</p>
 <p>Selon les conditions prévues par le RGPD, tu disposes de droits d'accès,
 rectification, effacement, limitation et portabilité, ainsi que
 d'opposition aux traitements fondés sur l'intérêt légitime et de retrait
