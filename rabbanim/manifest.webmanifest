@@ -1,0 +1,12 @@
+{
+  "name": "STAM · Espace Rabbanim",
+  "short_name": "STAM Rav",
+  "start_url": "rabbanim.html",
+  "display": "standalone",
+  "background_color": "#FFF9F4",
+  "theme_color": "#6E2440",
+  "icons": [
+    { "src": "icone-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icone-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

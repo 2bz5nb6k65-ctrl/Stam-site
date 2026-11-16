@@ -4,3 +4,7 @@
 .rav-login{max-width:520px}.rav-login input{display:block;width:100%;min-height:44px;padding:10px;margin-top:7px;border:1px solid #ddd0cc;border-radius:10px;background:#fffdf9;font:inherit;box-sizing:border-box}
 .rav-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.rav-who{font-size:.94rem;color:#634550}.rav-unread{display:inline-block;margin-left:8px;font-size:.75rem;background:#762841;color:#fff;border-radius:99px;padding:2px 8px}
 .rav-team [hidden]{display:none!important}
+
+/* Conversation par femme (16 novembre 2026) */
+.rav-question-card.selected { outline: 2px solid #6E2440; }
+.rav-thread-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 18px; padding-top: 10px; border-top: 1px solid #EFE4DA; }

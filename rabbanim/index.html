@@ -6,6 +6,12 @@
 <meta name="robots" content="noindex">
 <title>STAM — Espace Rabbanim</title>
 <link rel="stylesheet" href="portail.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icone-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="STAM Rav">
+<meta name="theme-color" content="#6E2440">
 </head>
 <body class="rav-team">
 <main>
@@ -21,6 +27,7 @@
     <label>E-mail<input id="email" type="email" autocomplete="username" spellcheck="false"></label>
     <label>Mot de passe<input id="password" type="password" autocomplete="current-password"></label>
     <button type="button" class="btn" id="connect">Ouvrir mon espace</button>
+    <p class="rav-small">Astuce : sur ton téléphone, ajoute cette page à l’écran d’accueil (iPhone : Partager → « Sur l’écran d’accueil » ; Android : menu ⋮ → « Ajouter à l’écran d’accueil »). Tu l’ouvriras d’un geste, comme une application, et tu resteras connecté.</p>
     <p class="rav-error" id="loginError" role="status"></p>
   </section>
 
@@ -32,13 +39,13 @@
         <strong id="availability"></strong>
         <button type="button" class="btn secondary" id="toggle">Changer ma disponibilité</button>
       </div>
-      <h2>Questions de mon minhag</h2>
-      <p class="rav-small">Les questions non orientées sont visibles par toute l’équipe. Une question prise en charge reste attribuée au même Rav pour le suivi.</p>
+      <h2>Mes conversations</h2>
+      <p class="rav-small">Une ligne par femme (numéro anonyme), avec tout son historique. Une femme que tu as déjà suivie t’envoie directement ses nouvelles questions.</p>
       <div id="queue" aria-live="polite"></div>
     </section>
     <section class="rav-team-panel">
-      <h2>Échange dans STAM</h2>
-      <div id="thread"><p class="rav-team-empty">Choisis une question à gauche.</p></div>
+      <h2>Conversation</h2>
+      <div id="thread"><p class="rav-team-empty">Choisis une femme à gauche.</p></div>
       <p id="error" class="rav-error" role="status"></p>
     </section>
   </div>
