@@ -112,12 +112,66 @@
     target.append(label, actions);
   }
 
+  // ---------- Notifications sur ce téléphone ----------
+  const pushSupported = () => 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+  const isIOS = () => /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const installed = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const keyBytes = (s) => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4)), (c) => c.charCodeAt(0));
+
+  async function currentSubscription() {
+    if (!pushSupported()) return null;
+    const reg = await navigator.serviceWorker.getRegistration();
+    return reg ? reg.pushManager.getSubscription() : null;
+  }
+
+  async function renderPush() {
+    const box = $('push'); if (!box) return;
+    box.replaceChildren();
+    if (!pushSupported()) {
+      box.append(node('p', isIOS() && !installed()
+        ? 'Pour recevoir une notification à chaque nouvelle question : ajoute d’abord cette page à l’écran d’accueil (Partager → « Sur l’écran d’accueil »), puis ouvre l’espace depuis l’icône « STAM Rav ».'
+        : 'Ce navigateur ne permet pas les notifications. Sur iPhone, utilise Safari et l’icône sur l’écran d’accueil ; sur Android, Chrome.', 'rav-small'));
+      return;
+    }
+    const sub = await currentSubscription();
+    if (sub && Notification.permission === 'granted') {
+      // Réenregistrée à chaque ouverture : l'adresse peut changer.
+      api('POST', '/v1/rabbanim/push/subscribe', sub.toJSON()).catch(() => {});
+      box.append(node('p', '🔔 Notifications activées sur ce téléphone.', 'rav-small'), button('Couper les notifications', run(async () => {
+        await api('POST', '/v1/rabbanim/push/unsubscribe', { endpoint: sub.endpoint }).catch(() => {});
+        await sub.unsubscribe(); await renderPush();
+      })));
+      return;
+    }
+    if (Notification.permission === 'denied') {
+      box.append(node('p', 'Les notifications sont bloquées pour cette page. Autorise-les dans les réglages du téléphone (Réglages → Notifications → STAM Rav), puis rouvre l’espace.', 'rav-small'));
+      return;
+    }
+    box.append(node('p', 'Reçois une notification sur ce téléphone à chaque nouvelle question ou nouveau message.', 'rav-small'), button('Activer les notifications', run(async () => {
+      const reg = await navigator.serviceWorker.register('sw.js');
+      const permission = await Notification.requestPermission();
+      if (permission !== 'granted') { await renderPush(); return; }
+      const { publicKey } = await api('GET', '/v1/rabbanim/push/key');
+      await navigator.serviceWorker.ready;
+      const sub = (await reg.pushManager.getSubscription()) || (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: keyBytes(publicKey) }));
+      await api('POST', '/v1/rabbanim/push/subscribe', sub.toJSON());
+      await renderPush();
+      error('Notifications activées.');
+    }), 'btn'));
+  }
+
+  // Notification touchée : ouvrir la conversation de cette femme.
+  const openFromHash = () => { const m = /^#femme-(\d+)$/.exec(location.hash); if (m) { selected = Number(m[1]); history.replaceState(null, '', location.pathname); } };
+  if (pushSupported()) navigator.serviceWorker.addEventListener('message', (e) => { if (e.data && e.data.open) { selected = e.data.open; draftOp = null; renderAll().catch(() => {}); } });
+
   async function renderAll() { await renderMe(); await renderQueue(); await renderThread(); }
 
   async function open() {
     try { await renderMe(); } catch { return; }
     $('login').hidden = true; $('space').hidden = false; $('logout').hidden = false; $('changePassword').hidden = false;
+    openFromHash();
     await renderAll().catch((e) => error(e.message));
+    renderPush().catch(() => {});
   }
 
   $('connect').onclick = async () => {
@@ -137,8 +191,13 @@
     if (!res.ok) throw new Error('Le mot de passe n’a pas pu être changé. Réessaie.');
     error('Mot de passe changé.');
   });
-  $('logout').onclick = () => logout();
+  // Se déconnecter coupe aussi les notifications de ce téléphone.
+  $('logout').onclick = async () => {
+    try { const sub = await currentSubscription(); if (sub) { await api('POST', '/v1/rabbanim/push/unsubscribe', { endpoint: sub.endpoint }).catch(() => {}); await sub.unsubscribe(); } } catch { /* déjà coupé */ }
+    logout();
+  };
   // Actualisation régulière tant que la page est visible ; le brouillon de réponse est conservé.
   setInterval(() => { if (token && !document.hidden && !$('space').hidden) renderQueue().catch(() => {}); }, 30000);
+  document.addEventListener('visibilitychange', () => { if (token && !document.hidden && !$('space').hidden) renderQueue().catch(() => {}); });
   if (token) open();
 })();
