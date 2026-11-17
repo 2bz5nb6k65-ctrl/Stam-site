@@ -89,16 +89,19 @@
         target.append(row);
       }
       if (!t.assignedToMe) target.append(button('Prendre en charge cette question', run(async () => { await api('POST', '/v1/rabbanim/threads/' + t.id + '/take'); await renderAll(); }), 'btn'));
+      else if (t.status === 'answered') target.append(node('p', '✓ Réponse publiée · question fermée. La femme pose une nouvelle question si elle a besoin d’une suite.', 'rav-small'));
       else current = t;
     }
     if (!current) return;
-    // La réponse va à la question la plus récente que je suis.
+    // La réponse va à la question la plus récente que je suis et qui n'est pas encore fermée.
     const label = node('label', 'Ma réponse · ' + current.topic + ' du ' + stamp(current.createdAt)), input = node('textarea');
     input.id = 'reply'; input.rows = 6; input.maxLength = 3000; input.value = draft;
     input.oninput = () => { if (!draftOp) draftOp = newOp(); };
     label.append(input);
     const send = (kind) => run(async () => {
       const text = input.value.trim(); if (!text) return;
+      // Publier la réponse ferme la question (demande du Rav) ; une demande de précision la laisse ouverte.
+      if (kind === 'answer' && !confirm('Publier la réponse ? La question sera fermée : la femme posera une nouvelle question si elle a besoin d’une suite.')) return;
       // Même identifiant si l'envoi est relancé après une coupure : le message n'est publié qu'une fois.
       draftOp = draftOp || newOp();
       await api('POST', '/v1/rabbanim/threads/' + current.id + '/messages', { op: draftOp, text, kind });
@@ -109,7 +112,7 @@
       if (!confirm('Rendre cette question à la file ? Un autre Rav pourra la prendre.')) return;
       await api('POST', '/v1/rabbanim/threads/' + current.id + '/release'); await renderAll();
     })));
-    target.append(label, actions);
+    target.append(label, actions, node('p', '« Publier la réponse » ferme la question. « Demander une précision » la laisse ouverte pour que la femme réponde.', 'rav-small'));
   }
 
   // ---------- Notifications sur ce téléphone ----------
