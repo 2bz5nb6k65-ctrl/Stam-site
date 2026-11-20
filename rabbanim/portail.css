@@ -8,3 +8,4 @@
 /* Conversation par femme (16 novembre 2026) */
 .rav-question-card.selected { outline: 2px solid #6E2440; }
 .rav-thread-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 18px; padding-top: 10px; border-top: 1px solid #EFE4DA; }
+.rav-photos{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;white-space:normal}.rav-photo{width:110px;height:110px;padding:0;border:1px solid #e7dcd4;border-radius:12px;overflow:hidden;background:#efe4dc;cursor:zoom-in}.rav-photo img{width:100%;height:100%;object-fit:cover;display:block}.rav-photo-layer{position:fixed;inset:0;z-index:50;background:rgba(20,10,14,.93);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}.rav-photo-layer img{max-width:100%;max-height:85vh;object-fit:contain}.rav-photo-layer p{color:#fff;margin-top:12px}

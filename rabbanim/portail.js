@@ -13,6 +13,23 @@
   // Reste connecté sur ce téléphone (icône sur l'écran d'accueil) jusqu'à « Se déconnecter ».
   try { token = localStorage.getItem('stam-rav-token') || ''; refresh = localStorage.getItem('stam-rav-refresh') || ''; } catch {}
   let selected = null, draftOp = null;
+  // Photos jointes par les femmes (20 novembre 2026) : lues une fois par session, affichées en vignette, agrandies au toucher.
+  const photoCache = new Map();
+  function photoView(id) {
+    const box = node('button', undefined, 'rav-photo'); box.type = 'button'; box.setAttribute('aria-label', 'Agrandir la photo');
+    const img = node('img'); img.alt = 'Photo envoyée'; box.append(img);
+    const show = (url) => { if (url) img.src = url; else box.replaceWith(node('span', 'Photo effacée (30 jours après l’envoi)', 'rav-small')); };
+    if (photoCache.has(id)) show(photoCache.get(id));
+    else api('GET', '/v1/rabbanim/photos/' + id).then((p) => { const url = 'data:' + p.mime + ';base64,' + p.data; photoCache.set(id, url); show(url); }, () => show(null));
+    box.onclick = () => {
+      if (!img.src) return;
+      const layer = node('div', undefined, 'rav-photo-layer'), big = node('img'); big.src = img.src; big.alt = 'Photo envoyée, en grand';
+      layer.append(big, node('p', 'Toucher pour fermer'));
+      layer.onclick = () => layer.remove();
+      document.body.append(layer);
+    };
+    return box;
+  }
 
   // Connexion du Rav : e-mail et mot de passe du compte créé par l'équipe STAM (service de connexion Supabase).
   async function auth(grant, payload) {
@@ -85,7 +102,9 @@
       if (t.neededBy) target.append(node('p', 'Réponse souhaitée avant le ' + stamp(t.neededBy) + ' (indication, sans engagement de délai).', 'rav-small'));
       for (const m of t.messages) {
         const row = node('div', undefined, 'rav-message ' + m.role);
-        row.append(node('strong', (m.role === 'client' ? 'Elle' : m.author) + (m.kind === 'precision' ? ' · demande de précision' : '') + ' · ' + stamp(m.at)), node('span', m.text));
+        row.append(node('strong', (m.role === 'client' ? 'Elle' : m.author) + (m.kind === 'precision' ? ' · demande de précision' : '') + ' · ' + stamp(m.at)));
+        if (!(m.photos && m.photos.length && m.text === 'Photo jointe')) row.append(node('span', m.text));
+        if (m.photos && m.photos.length) { const pics = node('div', undefined, 'rav-photos'); for (const id of m.photos) pics.append(photoView(id)); row.append(pics); }
         target.append(row);
       }
       if (!t.assignedToMe) target.append(button('Prendre en charge cette question', run(async () => { await api('POST', '/v1/rabbanim/threads/' + t.id + '/take'); await renderAll(); }), 'btn'));
